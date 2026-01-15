@@ -113,5 +113,5 @@ jobs:
           context: .
           push: true
           tags: |
-            ghcr.io/${{ github.repository }}:latest
-            ghcr.io/${{ github.repository }}:${{ github.sha }}
+            ghcr.io/avito-courses/l11-examples:latest
+            ghcr.io/avito-courses/l11-examples:${{ github.sha }}
