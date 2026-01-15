@@ -1,19 +1,25 @@
+## Github actions
+Конфиг в `.github/workflows/ci.yml`  
+Собранные образы можно увидеть [тут](https://github.com/Avito-courses/l11-examples/pkgs/container/l11-examples) 
 
-Сборка образа. Проверка dockerfile
-```bash
-docker build -t my-app:local .
-```
-
+## Линтеры
+Конфиг линтеров лежит в `.golangci.yaml`  
 Запустить форматеры и линтеры
 ```bash
 golangci-lint fmt
 golangci-lint run
 ```
 
+## Dockerfile
+Сборка образа. Проверка dockerfile
+```bash
+docker build -t my-app:local .
+```
+
+---
+
 Поднять БД локально
 ```docker-compose up -d```
-
-Пинг http://127.0.0.1:3005/ping
 
 Запустить миграции
 ```bash
