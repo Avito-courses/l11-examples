@@ -22,13 +22,13 @@ func NewUserController(service userRepo) *Controller {
 // Get обработчик получения конкретного юзера
 func (c *Controller) Get(w http.ResponseWriter, r *http.Request) {
 	idStr := chi.URLParam(r, "id")
-	id, err := strconv.Atoi(idStr)
-	if err != nil {
-		c.writeJSON(w, http.StatusBadRequest, map[string]string{
-			"error": "Invalid user ID",
-		})
-		return
-	}
+	id, _ := strconv.Atoi(idStr)
+	//if err != nil {
+	//	c.writeJSON(w, http.StatusBadRequest, map[string]string{
+	//		"error": "Invalid user ID",
+	//	})
+	//	return
+	//}
 
 	user, err := c.repo.GetByID(r.Context(), id)
 	if err != nil {
