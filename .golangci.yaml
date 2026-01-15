@@ -1,0 +1,45 @@
+version: "2"
+run:
+  issues-exit-code: 1
+  tests: true
+output:
+  formats:
+    text:
+      path: stdout
+      print-linter-name: true
+      print-issued-lines: true
+linters:
+  default: none
+  enable:
+    - errcheck
+    - ineffassign
+    - makezero
+    - staticcheck
+    - asciicheck
+  settings:
+    staticcheck:
+      checks:
+        - all
+        - -ST1000
+  exclusions:
+    generated: lax
+    paths:
+      - migrations
+      - docs
+      - third_party$
+formatters:
+  enable:
+    - gci
+  settings:
+    gci:
+      custom-order: true
+      sections:
+        - standard
+        - default
+        - prefix(github.com/Avito-courses)
+  exclusions:
+    generated: lax
+    paths:
+      - migrations
+      - docs
+      - third_party$
